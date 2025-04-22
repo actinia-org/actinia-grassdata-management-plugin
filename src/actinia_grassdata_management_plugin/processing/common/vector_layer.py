@@ -37,17 +37,17 @@ __email__ = "info@mundialis.de"
 
 
 EphemeralVectorInfo = try_import(
-    "actinia_core.processing.actinia_processing.ephemeral.vector_layer",
+    "actinia_grassdata_management_plugin.processing.actinia_processing.ephemeral.vector_layer",
     "EphemeralVectorInfo",
 )
 
 PersistentVectorDeleter = try_import(
-    "actinia_core.processing.actinia_processing.persistent.vector_layer",
+    "actinia_grassdata_management_plugin.processing.actinia_processing.persistent.vector_layer",
     "PersistentVectorDeleter",
 )
 
 PersistentVectorCreator = try_import(
-    "actinia_core.processing.actinia_processing.persistent.vector_layer",
+    "actinia_grassdata_management_plugin.processing.actinia_processing.persistent.vector_layer",
     "PersistentVectorCreator",
 )
 

@@ -40,7 +40,7 @@ __email__ = "info@mundialis.de"
 
 PersistentRasterSTRDSLister = try_import(
     (
-        "actinia_core.processing.actinia_processing.persistent"
+        "actinia_grassdata_management_plugin.processing.actinia_processing.persistent"
         + ".strds_raster_management"
     ),
     "PersistentRasterSTRDSLister",
@@ -48,7 +48,7 @@ PersistentRasterSTRDSLister = try_import(
 
 PersistentRasterSTRDSRegisterer = try_import(
     (
-        "actinia_core.processing.actinia_processing.persistent"
+        "actinia_grassdata_management_plugin.processing.actinia_processing.persistent"
         + ".strds_raster_management"
     ),
     "PersistentRasterSTRDSRegisterer",
@@ -56,7 +56,7 @@ PersistentRasterSTRDSRegisterer = try_import(
 
 PersistentRasterSTRDSUnregisterer = try_import(
     (
-        "actinia_core.processing.actinia_processing.persistent"
+        "actinia_grassdata_management_plugin.processing.actinia_processing.persistent"
         + ".strds_raster_management"
     ),
     "PersistentRasterSTRDSUnregisterer",

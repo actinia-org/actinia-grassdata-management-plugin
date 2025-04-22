@@ -38,7 +38,7 @@ __email__ = "info@mundialis.de"
 
 EphemeralRasterLegend = try_import(
     (
-        "actinia_core.processing.actinia_processing.ephemeral"
+        "actinia_grassdata_management_plugin.processing.actinia_processing.ephemeral"
         + ".raster_legend"
     ),
     "EphemeralRasterLegend",

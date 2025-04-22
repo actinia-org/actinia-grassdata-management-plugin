@@ -37,12 +37,12 @@ __email__ = "info@mundialis.de"
 
 
 EphemeralRasterColorsOutput = try_import(
-    "actinia_core.processing.actinia_processing.ephemeral.raster_colors",
+    "actinia_grassdata_management_plugin.processing.actinia_processing.ephemeral.raster_colors",
     "EphemeralRasterColorsOutput",
 )
 
 PersistentRasterColorsRules = try_import(
-    "actinia_core.processing.actinia_processing.persistent.raster_colors",
+    "actinia_grassdata_management_plugin.processing.actinia_processing.persistent.raster_colors",
     "PersistentRasterColorsRules",
 )
 

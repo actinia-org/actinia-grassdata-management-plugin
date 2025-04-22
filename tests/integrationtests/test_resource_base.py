@@ -30,7 +30,7 @@ from pathlib import Path
 from actinia_core.core.common.config import global_config
 from actinia_core.core.common.user import ActiniaUser
 from actinia_core.endpoints import create_endpoints
-from actinia_core.testsuite import ActiniaTestCaseBase
+from actinia_core.testsuite import ActiniaTestCaseBase, URL_PREFIX
 from werkzeug.datastructures import Headers
 
 __license__ = "GPLv3"
@@ -101,6 +101,8 @@ def stop_kvdb() -> None:
 atexit.register(stop_kvdb)
 # Setup the environment
 setup_environment()
+
+URL_PREFIX = URL_PREFIX
 
 
 class ActiniaResourceTestCaseBase(ActiniaTestCaseBase):
