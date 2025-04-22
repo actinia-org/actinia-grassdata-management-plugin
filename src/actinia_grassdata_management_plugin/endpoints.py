@@ -25,12 +25,50 @@ __maintainer__ = "mundialis GmbH & Co. KG"
 from actinia_core.endpoints import get_endpoint_class_name
 from flask_restful_swagger_2 import Api
 
-from actinia_grassdata_management_plugin.api.helloworld import HelloWorld
-from actinia_grassdata_management_plugin.api.project_helloworld import ProjectHelloWorld
+from actinia_grassdata_management_plugin.rest.map_layer_management import (
+    RasterLayersResource,
+)
+from actinia_grassdata_management_plugin.rest.map_layer_management import (
+    VectorLayersResource,
+)
+from actinia_grassdata_management_plugin.rest.raster_colors import (
+    SyncPersistentRasterColorsResource,
+)
+from actinia_grassdata_management_plugin.rest.raster_layer import (
+    RasterLayerResource,
+)
+from actinia_grassdata_management_plugin.rest.raster_legend import (
+    SyncEphemeralRasterLegendResource,
+)
+from actinia_grassdata_management_plugin.rest.raster_renderer import (
+    SyncEphemeralRasterRendererResource,
+)
+from actinia_grassdata_management_plugin.rest.raster_renderer import (
+    SyncEphemeralRasterRGBRendererResource,
+)
+from actinia_grassdata_management_plugin.rest.raster_renderer import (
+    SyncEphemeralRasterShapeRendererResource,
+)
+from actinia_grassdata_management_plugin.rest.strds_management import (
+    STRDSManagementResource,
+    SyncSTRDSListerResource,
+)
+from actinia_grassdata_management_plugin.rest.strds_raster_management import (
+    STRDSRasterManagement,
+)
+from actinia_grassdata_management_plugin.rest.strds_renderer import (
+    SyncEphemeralSTRDSRendererResource,
+)
+from actinia_grassdata_management_plugin.rest.vector_layer import (
+    VectorLayerResource,
+)
+from actinia_grassdata_management_plugin.rest.vector_renderer import (
+    SyncEphemeralVectorRendererResource,
+)
 
 
 def create_project_endpoints(
-    apidoc: Api,
+    flask_api: Api,
     projects_url_part: str = "projects",
 ) -> None:
     """Add resources with "project" inside the endpoint url to the api.
@@ -42,22 +80,130 @@ def create_project_endpoints(
                                  it to "locations"
 
     """
-    apidoc.add_resource(
-        ProjectHelloWorld,
-        f"/helloworld/{projects_url_part}/<string:project_name>",
-        endpoint=get_endpoint_class_name(ProjectHelloWorld, projects_url_part),
+
+    # Raster management
+    flask_api.add_resource(
+        RasterLayersResource,
+        f"/{projects_url_part}/<string:project_name>/mapsets/"
+        "<string:mapset_name>/raster_layers",
+        endpoint=get_endpoint_class_name(
+            RasterLayersResource, projects_url_part
+        ),
+    )
+    flask_api.add_resource(
+        RasterLayerResource,
+        f"/{projects_url_part}/<string:project_name>/mapsets/"
+        "<string:mapset_name>/raster_layers/<string:raster_name>",
+        endpoint=get_endpoint_class_name(
+            RasterLayerResource, projects_url_part
+        ),
+    )
+    flask_api.add_resource(
+        SyncEphemeralRasterLegendResource,
+        f"/{projects_url_part}/<string:project_name>/mapsets/"
+        "<string:mapset_name>/raster_layers/<string:raster_name>/legend",
+        endpoint=get_endpoint_class_name(
+            SyncEphemeralRasterLegendResource, projects_url_part
+        ),
+    )
+    flask_api.add_resource(
+        SyncPersistentRasterColorsResource,
+        f"/{projects_url_part}/<string:project_name>/mapsets/"
+        "<string:mapset_name>/raster_layers/<string:raster_name>/colors",
+        endpoint=get_endpoint_class_name(
+            SyncPersistentRasterColorsResource, projects_url_part
+        ),
+    )
+    flask_api.add_resource(
+        SyncEphemeralRasterRendererResource,
+        f"/{projects_url_part}/<string:project_name>/mapsets/"
+        "<string:mapset_name>/raster_layers/<string:raster_name>/render",
+        endpoint=get_endpoint_class_name(
+            SyncEphemeralRasterRendererResource, projects_url_part
+        ),
+    )
+    flask_api.add_resource(
+        SyncEphemeralRasterRGBRendererResource,
+        f"/{projects_url_part}/<string:project_name>/mapsets/"
+        "<string:mapset_name>/render_rgb",
+        endpoint=get_endpoint_class_name(
+            SyncEphemeralRasterRGBRendererResource, projects_url_part
+        ),
+    )
+    flask_api.add_resource(
+        SyncEphemeralRasterShapeRendererResource,
+        f"/{projects_url_part}/<string:project_name>/mapsets/"
+        "<string:mapset_name>/render_shade",
+        endpoint=get_endpoint_class_name(
+            SyncEphemeralRasterShapeRendererResource, projects_url_part
+        ),
+    )
+    # STRDS management
+    flask_api.add_resource(
+        SyncSTRDSListerResource,
+        f"/{projects_url_part}/<string:project_name>/mapsets/"
+        "<string:mapset_name>/strds",
+        endpoint=get_endpoint_class_name(
+            SyncSTRDSListerResource, projects_url_part
+        ),
+    )
+    flask_api.add_resource(
+        STRDSManagementResource,
+        f"/{projects_url_part}/<string:project_name>/mapsets/"
+        "<string:mapset_name>/strds/<string:strds_name>",
+        endpoint=get_endpoint_class_name(
+            STRDSManagementResource, projects_url_part
+        ),
+    )
+    flask_api.add_resource(
+        STRDSRasterManagement,
+        f"/{projects_url_part}/<string:project_name>/mapsets/"
+        "<string:mapset_name>/strds/<string:strds_name>/raster_layers",
+        endpoint=get_endpoint_class_name(
+            STRDSRasterManagement, projects_url_part
+        ),
+    )
+    # Vector management
+    flask_api.add_resource(
+        VectorLayersResource,
+        f"/{projects_url_part}/<string:project_name>/mapsets/"
+        "<string:mapset_name>/vector_layers",
+        endpoint=get_endpoint_class_name(
+            VectorLayersResource, projects_url_part
+        ),
+    )
+    flask_api.add_resource(
+        VectorLayerResource,
+        f"/{projects_url_part}/<string:project_name>/mapsets/"
+        "<string:mapset_name>/vector_layers/<string:vector_name>",
+        endpoint=get_endpoint_class_name(
+            VectorLayerResource, projects_url_part
+        ),
+    )
+    flask_api.add_resource(
+        SyncEphemeralVectorRendererResource,
+        f"/{projects_url_part}/<string:project_name>/mapsets/"
+        "<string:mapset_name>/vector_layers/<string:vector_name>/render",
+        endpoint=get_endpoint_class_name(
+            SyncEphemeralVectorRendererResource, projects_url_part
+        ),
+    )
+    flask_api.add_resource(
+        SyncEphemeralSTRDSRendererResource,
+        f"/{projects_url_part}/<string:project_name>/mapsets/"
+        "<string:mapset_name>/strds/<string:strds_name>/render",
+        endpoint=get_endpoint_class_name(
+            SyncEphemeralSTRDSRendererResource, projects_url_part
+        ),
     )
 
 
-# endpoints loaded if run as actinia-core plugin as well as standalone app
+#  endpoints loaded if run as actinia-core plugin as well as standalone app
 def create_endpoints(flask_api: Api) -> None:
     """Create plugin endpoints."""
-    apidoc = flask_api
-
-    apidoc.add_resource(HelloWorld, "/helloworld")
 
     # add deprecated location endpoints
-    create_project_endpoints(apidoc, projects_url_part="locations")
+    create_project_endpoints(flask_api, projects_url_part="locations")
 
     # add project endpoints
-    create_project_endpoints(apidoc, projects_url_part="projects")
+    create_project_endpoints(flask_api, projects_url_part="projects")
