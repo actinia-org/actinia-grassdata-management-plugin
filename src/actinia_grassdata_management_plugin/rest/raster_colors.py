@@ -38,10 +38,10 @@ from actinia_core.rest.base.endpoint_config import (
 )
 from actinia_core.rest.base.resource_base import ResourceBase
 
-from actinia_grassdata_management_plugin.processing.common.raster_colors import (
+from actinia_grassdata_management_plugin.processing.common.raster_colors import (  # noqa: E501
     start_job_colors_out,
 )
-from actinia_grassdata_management_plugin.processing.common.raster_colors import (
+from actinia_grassdata_management_plugin.processing.common.raster_colors import (  # noqa: E501
     start_job_from_rules,
 )
 

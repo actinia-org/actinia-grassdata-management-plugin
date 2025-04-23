@@ -31,7 +31,7 @@ from tempfile import NamedTemporaryFile
 import os
 import atexit
 
-from actinia_core.processing.actinia_processing.ephemeral.persistent_processing import (
+from actinia_core.processing.actinia_processing.ephemeral.persistent_processing import (  # noqa: E501
     PersistentProcessing,
 )
 

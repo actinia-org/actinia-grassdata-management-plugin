@@ -37,7 +37,7 @@ from actinia_core.rest.base.endpoint_config import (
 from actinia_core.core.common.kvdb_interface import enqueue_job
 from actinia_core.rest.base.renderer_base import RendererBaseResource
 
-from actinia_grassdata_management_plugin.processing.common.raster_renderer import (
+from actinia_grassdata_management_plugin.processing.common.raster_renderer import (  # noqa: E501
     start_job,
     start_rgb_job,
     start_shade_job,

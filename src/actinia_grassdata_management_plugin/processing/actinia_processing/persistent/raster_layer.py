@@ -25,7 +25,7 @@
 Raster layer resources
 """
 import os
-from actinia_core.processing.actinia_processing.ephemeral.persistent_processing import (
+from actinia_core.processing.actinia_processing.ephemeral.persistent_processing import (  # noqa: E501
     PersistentProcessing,
 )
 from actinia_core.core.common.exceptions import AsyncProcessError
@@ -76,12 +76,10 @@ class PersistentRasterDeleter(PersistentProcessing):
         # TODO: check for error code if g.remove is updated
         # instead of using string which might change
         # self.module_output_log[0]["return_code"] != 0
-        error_output = "\n".join(
-            self.module_output_log[0]["stderr"]
-        )
+        error_output = "\n".join(self.module_output_log[0]["stderr"])
         if (
-            "WARNING: No data base element files found" in error_output or
-            "No file(s) found for type(s)" in error_output
+            "WARNING: No data base element files found" in error_output
+            or "No file(s) found for type(s)" in error_output
         ):
             raise AsyncProcessError(
                 "Raster layer <%s> not found" % raster_name

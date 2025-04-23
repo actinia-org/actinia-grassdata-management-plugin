@@ -35,7 +35,7 @@ from actinia_core.rest.base.endpoint_config import (
     check_endpoint,
     endpoint_decorator,
 )
-from actinia_grassdata_management_plugin.processing.common.strds_renderer import (
+from actinia_grassdata_management_plugin.processing.common.strds_renderer import (  # noqa: E501
     start_job,
 )
 

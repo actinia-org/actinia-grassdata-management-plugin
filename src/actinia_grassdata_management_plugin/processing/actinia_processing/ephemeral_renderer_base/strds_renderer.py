@@ -29,7 +29,7 @@ from actinia_core.processing.actinia_processing.ephemeral_processing import (
     EphemeralProcessing,
 )
 
-from actinia_grassdata_management_plugin.processing.actinia_processing.ephemeral.base.renderer_base import (
+from actinia_grassdata_management_plugin.processing.actinia_processing.ephemeral.base.renderer_base import (  # noqa: E501
     EphemeralRendererBase,
 )
 
