@@ -34,6 +34,13 @@ RUN wget --quiet https://grass.osgeo.org/sampledata/north_carolina/nc_spm_mapset
   mv  modis_lst /actinia_core/grassdb/nc_spm_08/modis_lst
 RUN chown -R 1001:1001 /actinia_core/grassdb/nc_spm_08/modis_lst && chmod -R g+w /actinia_core/grassdb/nc_spm_08/modis_lst
 
+# TODO remove / switch to actinia-org/develop branch
+RUN pip3 uninstall actinia_core -y
+RUN git clone https://github.com/mmacata/actinia-core.git /src/actinia-core
+WORKDIR /src/actinia-core
+RUN git checkout actinia-grassdata-management-plugin
+RUN pip install .
+
 # copy needed files and configs for test
 COPY docker/actinia-grassdata-management-plugin-test/actinia-grassdata-management-plugin-test.cfg /etc/default/actinia
 COPY docker/actinia-grassdata-management-plugin-test/actinia-grassdata-management-plugin-test.cfg /etc/default/actinia-grassdata-management-plugin-test
