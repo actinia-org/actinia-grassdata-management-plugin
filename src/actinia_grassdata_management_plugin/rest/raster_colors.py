@@ -37,8 +37,13 @@ from actinia_core.rest.base.endpoint_config import (
     endpoint_decorator,
 )
 from actinia_core.rest.base.resource_base import ResourceBase
-from actinia_core.processing.common.raster_colors import start_job_colors_out
-from actinia_core.processing.common.raster_colors import start_job_from_rules
+
+from actinia_grassdata_management_plugin.processing.common.raster_colors import (  # noqa: E501
+    start_job_colors_out,
+)
+from actinia_grassdata_management_plugin.processing.common.raster_colors import (  # noqa: E501
+    start_job_from_rules,
+)
 
 __license__ = "GPLv3"
 __author__ = "Sören Gebbert, Carmen Tawalika, Anika Weinmann"

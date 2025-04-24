@@ -37,7 +37,10 @@ from actinia_core.rest.base.endpoint_config import (
 )
 from actinia_core.core.common.kvdb_interface import enqueue_job
 from actinia_core.rest.base.resource_base import ResourceBase
-from actinia_core.processing.common.raster_legend import start_job
+
+from actinia_grassdata_management_plugin.processing.common.raster_legend import (  # noqa: E501
+    start_job,
+)
 
 
 __license__ = "GPLv3"

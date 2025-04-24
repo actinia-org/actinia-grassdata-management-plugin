@@ -38,7 +38,7 @@ __email__ = "info@mundialis.de"
 
 EphemeralSTRDSRenderer = try_import(
     (
-        "actinia_core.processing.actinia_processing.ephemeral_renderer_base"
+        "actinia_grassdata_management_plugin.processing.actinia_processing.ephemeral_renderer_base"
         + ".strds_renderer"
     ),
     "EphemeralSTRDSRenderer",

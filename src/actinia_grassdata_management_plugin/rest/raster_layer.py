@@ -39,7 +39,8 @@ from actinia_core.rest.base.endpoint_config import (
 )
 from actinia_core.core.utils import allowed_file
 from actinia_core.models.response_models import SimpleResponseModel
-from actinia_core.processing.common.raster_layer import (
+
+from actinia_grassdata_management_plugin.processing.common.raster_layer import (  # noqa: E501
     start_info_job,
     start_delete_job,
     start_create_job,

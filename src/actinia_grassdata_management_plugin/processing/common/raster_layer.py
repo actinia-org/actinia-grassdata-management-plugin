@@ -37,13 +37,16 @@ __email__ = "info@mundialis.de"
 
 
 EphemeralRasterInfo = try_import(
-    ("actinia_core.processing.actinia_processing.ephemeral" + ".raster_layer"),
+    (
+        "actinia_grassdata_management_plugin.processing.actinia_processing.ephemeral"
+        + ".raster_layer"
+    ),
     "EphemeralRasterInfo",
 )
 
 PersistentRasterDeleter = try_import(
     (
-        "actinia_core.processing.actinia_processing.persistent"
+        "actinia_grassdata_management_plugin.processing.actinia_processing.persistent"
         + ".raster_layer"
     ),
     "PersistentRasterDeleter",
@@ -51,7 +54,7 @@ PersistentRasterDeleter = try_import(
 
 PersistentRasterCreator = try_import(
     (
-        "actinia_core.processing.actinia_processing.persistent"
+        "actinia_grassdata_management_plugin.processing.actinia_processing.persistent"
         + ".raster_layer"
     ),
     "PersistentRasterCreator",

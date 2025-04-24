@@ -41,7 +41,8 @@ from actinia_core.core.common.kvdb_interface import enqueue_job
 from actinia_core.core.utils import allowed_file
 from actinia_core.models.response_models import SimpleResponseModel
 from actinia_core.rest.base.map_layer_base import MapLayerRegionResourceBase
-from actinia_core.processing.common.vector_layer import (
+
+from actinia_grassdata_management_plugin.processing.common.vector_layer import (  # noqa: E501
     start_create_job,
     start_delete_job,
     start_info_job,

@@ -35,7 +35,9 @@ from actinia_core.rest.base.endpoint_config import (
     check_endpoint,
     endpoint_decorator,
 )
-from actinia_core.processing.common.strds_renderer import start_job
+from actinia_grassdata_management_plugin.processing.common.strds_renderer import (  # noqa: E501
+    start_job,
+)
 
 __license__ = "GPLv3"
 __author__ = "Sören Gebbert, Anika Weinmann"

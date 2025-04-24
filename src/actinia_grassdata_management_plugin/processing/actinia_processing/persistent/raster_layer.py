@@ -25,7 +25,7 @@
 Raster layer resources
 """
 import os
-from actinia_core.processing.actinia_processing.ephemeral.persistent_processing import (
+from actinia_core.processing.actinia_processing.ephemeral.persistent_processing import (  # noqa: E501
     PersistentProcessing,
 )
 from actinia_core.core.common.exceptions import AsyncProcessError

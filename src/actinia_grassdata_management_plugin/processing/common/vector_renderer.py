@@ -39,7 +39,7 @@ __email__ = "info@mundialis.de"
 
 EphemeralVectorRenderer = try_import(
     (
-        "actinia_core.processing.actinia_processing.ephemeral_renderer_base"
+        "actinia_grassdata_management_plugin.processing.actinia_processing.ephemeral_renderer_base"
         + ".vector_renderer"
     ),
     "EphemeralVectorRenderer",

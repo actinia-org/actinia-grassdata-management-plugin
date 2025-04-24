@@ -38,7 +38,7 @@ __email__ = "info@mundialis.de"
 
 PersistentListLayers = try_import(
     (
-        "actinia_core.processing.actinia_processing.persistent"
+        "actinia_grassdata_management_plugin.processing.actinia_processing.persistent"
         + ".map_layer_management"
     ),
     "PersistentListLayers",
@@ -46,7 +46,7 @@ PersistentListLayers = try_import(
 
 PersistentRemoveLayers = try_import(
     (
-        "actinia_core.processing.actinia_processing.persistent"
+        "actinia_grassdata_management_plugin.processing.actinia_processing.persistent"
         + ".map_layer_management"
     ),
     "PersistentRemoveLayers",
@@ -54,7 +54,7 @@ PersistentRemoveLayers = try_import(
 
 PersistentRenameLayers = try_import(
     (
-        "actinia_core.processing.actinia_processing.persistent"
+        "actinia_grassdata_management_plugin.processing.actinia_processing.persistent"
         + ".map_layer_management"
     ),
     "PersistentRenameLayers",

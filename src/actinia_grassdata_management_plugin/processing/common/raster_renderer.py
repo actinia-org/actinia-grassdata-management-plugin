@@ -39,7 +39,7 @@ __email__ = "info@mundialis.de"
 
 EphemeralRasterRenderer = try_import(
     (
-        "actinia_core.processing.actinia_processing.ephemeral_renderer_base"
+        "actinia_grassdata_management_plugin.processing.actinia_processing.ephemeral_renderer_base"
         + ".raster_renderer"
     ),
     "EphemeralRasterRenderer",
@@ -47,7 +47,7 @@ EphemeralRasterRenderer = try_import(
 
 EphemeralRasterRGBRenderer = try_import(
     (
-        "actinia_core.processing.actinia_processing.ephemeral_renderer_base"
+        "actinia_grassdata_management_plugin.processing.actinia_processing.ephemeral_renderer_base"
         + ".raster_renderer"
     ),
     "EphemeralRasterRGBRenderer",
@@ -55,7 +55,7 @@ EphemeralRasterRGBRenderer = try_import(
 
 EphemeralRasterShadeRenderer = try_import(
     (
-        "actinia_core.processing.actinia_processing.ephemeral_renderer_base"
+        "actinia_grassdata_management_plugin.processing.actinia_processing.ephemeral_renderer_base"
         + ".raster_renderer"
     ),
     "EphemeralRasterShadeRenderer",

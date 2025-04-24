@@ -31,7 +31,7 @@ from actinia_api.swagger2.actinia_core.schemas.strds_management import (
     STRDSInfoResponseModel,
 )
 
-from actinia_core.processing.actinia_processing.ephemeral.persistent_processing import (
+from actinia_core.processing.actinia_processing.ephemeral.persistent_processing import (  # noqa: E501
     PersistentProcessing,
 )
 from actinia_core.core.common.exceptions import AsyncProcessError
