@@ -1,15 +1,75 @@
-# PLR0913 too-many-arguments (of function definition)
-# PLR0917 too-many-positional-arguments (of function definition)
-# PLW0603 (checks for use of) global-statement
-# S107 hardcoded-password-default
-# S606 start-process-with-no-shell
-# FA102 future-required-type-annotation
-# PLC0415 import-outside-top-level
-# PLR2004 magic-value-comparison (unnamed numerical constants ("magic") values)
+# Extends https://github.com/mundialis/github-workflows/blob/main/linting-config-examples/ruff.toml
 
-lint.ignore = ["PLR0913", "PLR0917", "PLW0603", "S107", "S606", "FA102"]
+lint.ignore = [
+    "A001",
+    "ANN001",
+    "ANN002",
+    "ANN201",
+    "ANN202",
+    "ANN204",
+    "ARG002",
+    "BLE001",
+    "COM812",
+    "D101",
+    "D102",
+    "D103",
+    "D104",
+    "D107",
+    "D200",
+    "D202",
+    "D205",
+    "D212",
+    "D400",
+    "D401",
+    "D413",
+    "D415",
+    "D417",
+    "E501",
+    "FBT002",
+    "FURB101",
+    "I001",
+    "ISC001",
+    "ISC003",
+    "PERF401",
+    "PLC1901",
+    "PLR0904",
+    "PLR0911",
+    "PLR0914",
+    "PLR0915",
+    "PLR2004",
+    "PLR6201",
+    "PLR6301",
+    "PLW0127",
+    "PLW1514",
+    "PT009",
+    "PTH102",
+    "PTH107",
+    "PTH110",
+    "PTH113",
+    "PTH118",
+    "PTH120",
+    "PTH123",
+    "PTH208",
+    "RET505",
+    "RUF012",
+    "S110",
+    "S301",
+    "S403",
+    "SIM102",
+    "SIM105",
+    "SIM115",
+    "SIM300",
+    "TRY003",
+    "UP009",
+    "UP015",
+    "UP031",
+    # for tests
+    "PLW0603",
+    "S606",
+    "PLR0913",
+    "PLR0917",
+    "S107",
+]
 
-[lint.per-file-ignores]
-"tests/testsuite.py" = [ "PLC0415",]
-"tests/integrationtests/test_helloworld.py" = [ "PLR2004",]
-"tests/integrationtests/test_projecthelloworld.py" = [ "PLR2004",]
+# [lint.per-file-ignores]
+# "src/actinia_grassdata_management_plugin/apidocs/__init__.py" = [ "E501",]

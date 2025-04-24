@@ -14,7 +14,7 @@ ENV DEFAULT_CONFIG_PATH=/etc/default/actinia-grassdata-management-plugin-test
 # install things only for tests
 # DL3018: Pin versions in apk add
 # hadolint ignore=DL3018
-RUN apk add --no-cache valkey && \
+RUN apk add --no-cache valkey valkey-cli && \
     pip3 install --no-cache-dir iniconfig==2.0.0 colorlog==6.8.2 pwgen==0.8.2.post0 pytest==8.3.5 pytest-cov==6.0.0
 
 # COPY docker/actinia-grassdata-management-plugin-test/start.sh /src/start.sh
@@ -22,12 +22,24 @@ RUN apk add --no-cache valkey && \
 ENTRYPOINT ["/bin/sh"]
 CMD ["/src/start.sh"]
 
-# # add data for tests
-# RUN wget --quiet https://grass.osgeo.org/sampledata/north_carolina/nc_spm_08_micro.zip && \
-#   unzip nc_spm_08_micro.zip && \
-#   rm -f nc_spm_08_micro.zip && \
-#   mv nc_spm_08_micro /actinia_core/grassdb/nc_spm_08
-# RUN grass -e -c 'EPSG:4326' /actinia_core/grassdb/latlong_wgs84
+# add data for tests
+RUN wget --quiet https://grass.osgeo.org/sampledata/north_carolina/nc_spm_08_micro.zip && \
+  unzip nc_spm_08_micro.zip && \
+  rm -f nc_spm_08_micro.zip && \
+  mv nc_spm_08_micro /actinia_core/grassdb/nc_spm_08
+RUN grass -e -c 'EPSG:4326' /actinia_core/grassdb/latlong_wgs84
+RUN wget --quiet https://grass.osgeo.org/sampledata/north_carolina/nc_spm_mapset_modis2015_2016_lst_grass8.zip && \
+  unzip nc_spm_mapset_modis2015_2016_lst_grass8.zip && \
+  rm -f nc_spm_mapset_modis2015_2016_lst_grass8.zip && \
+  mv  modis_lst /actinia_core/grassdb/nc_spm_08/modis_lst
+RUN chown -R 1001:1001 /actinia_core/grassdb/nc_spm_08/modis_lst && chmod -R g+w /actinia_core/grassdb/nc_spm_08/modis_lst
+
+# TODO remove / switch to actinia-org/develop branch
+RUN pip3 uninstall actinia_core -y
+RUN git clone https://github.com/mmacata/actinia-core.git /src/actinia-core
+WORKDIR /src/actinia-core
+RUN git checkout actinia-grassdata-management-plugin
+RUN pip install .
 
 # copy needed files and configs for test
 COPY docker/actinia-grassdata-management-plugin-test/actinia-grassdata-management-plugin-test.cfg /etc/default/actinia
