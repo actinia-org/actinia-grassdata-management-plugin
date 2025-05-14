@@ -45,7 +45,9 @@ from actinia_grassdata_management_plugin.processing.common.raster_layer import (
     start_delete_job,
     start_create_job,
 )
-from actinia_core.rest.base.map_layer_base import MapLayerRegionResourceBase
+from actinia_grassdata_management_plugin.rest.base.map_layer_base import (
+    MapLayerRegionResourceBase
+)
 
 __license__ = "GPLv3"
 __author__ = "Sören Gebbert, Carmen Tawalika, Guido Riembauer, Anika Weinmann"
