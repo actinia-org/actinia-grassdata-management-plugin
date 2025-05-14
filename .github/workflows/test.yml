@@ -4,52 +4,53 @@ name: actinia tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ main ]
+    branches: [main]
 
 jobs:
 
   tests-G84:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      # with:
-      #   path: "."
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v3
-    - name: Integration tests of actinia-grassdata-management-plugin
-      id: docker_build
-      uses: docker/build-push-action@v6
-      with:
-        push: false
-        tags: actinia-grassdata-management-plugin-test:alpine
-        context: .
-        file: docker/actinia-grassdata-management-plugin-test/Dockerfile
-        no-cache: true
-        # pull: true
+      - name: Checkout
+        uses: actions/checkout@v4
+        # with:
+        #   path: "."
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Integration tests of actinia-grassdata-management-plugin
+        id: docker_build
+        uses: docker/build-push-action@v6
+        with:
+          push: false
+          tags: actinia-grassdata-management-plugin-test:alpine
+          context: .
+          file: docker/actinia-grassdata-management-plugin-test/Dockerfile
+          no-cache: true
+          # pull: true
 
   tests-G83:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      # with:
-      #   path: "."
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v3
-    - name: Replace actinia version (including GRASS version)
-      run: |
-          sed -i "s+mundialis/actinia:latest+mundialis/actinia:grass8.3+g" docker/actinia-grassdata-management-plugin-test/Dockerfile
-    - name: Integration tests of actinia-grassdata-management-plugin
-      id: docker_build
-      uses: docker/build-push-action@v6
-      with:
-        push: false
-        tags: actinia-grassdata-management-plugin-test:alpine
-        context: .
-        file: docker/actinia-grassdata-management-plugin-test/Dockerfile
-        no-cache: true
-        # pull: true
+      - name: Checkout
+        uses: actions/checkout@v4
+        # with:
+        #   path: "."
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Replace actinia version (including GRASS version)
+        run: |
+            sed -i "s+mundialis/actinia:latest+mundialis/actinia:grass8.3+g" \
+                docker/actinia-grassdata-management-plugin-test/Dockerfile
+      - name: Integration tests of actinia-grassdata-management-plugin
+        id: docker_build
+        uses: docker/build-push-action@v6
+        with:
+          push: false
+          tags: actinia-grassdata-management-plugin-test:alpine
+          context: .
+          file: docker/actinia-grassdata-management-plugin-test/Dockerfile
+          no-cache: true
+          # pull: true

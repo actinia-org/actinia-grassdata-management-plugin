@@ -1,3 +1,4 @@
+---
 version: "3"
 services:
 
@@ -14,7 +15,7 @@ services:
     cap_add:
       - SYS_PTRACE
     networks:
-    -   actinia
+      - actinia
 
   valkey:
     image: valkey/valkey:8.1-alpine
@@ -31,9 +32,9 @@ services:
       '
     ]
     ports:
-        - "6379:6379"
+      - "6379:6379"
     networks:
-    -   actinia
+      - actinia
 
 networks:
   actinia:
