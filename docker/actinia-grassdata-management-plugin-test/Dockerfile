@@ -39,7 +39,7 @@ RUN pip3 uninstall actinia_core -y
 RUN git clone https://github.com/mmacata/actinia-core.git /src/actinia-core
 WORKDIR /src/actinia-core
 RUN git checkout actinia-grassdata-management-plugin
-RUN pip install .
+RUN pip install --no-cache-dir .
 
 # copy needed files and configs for test
 COPY docker/actinia-grassdata-management-plugin-test/actinia-grassdata-management-plugin-test.cfg /etc/default/actinia
