@@ -27,7 +27,7 @@ STRDS raster map layer management
 TODO: Integrate into the ephemeral process chain approach
 """
 import tempfile
-from actinia_api.swagger2.actinia_core.schemas.strds_raster_management import (  # noqa: E501
+from actinia_api.swagger2.actinia_core.schemas.strds_raster_management import (
     STRDSRasterListResponseModel,
     STRDSRasterListEntryModel,
 )
