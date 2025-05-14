@@ -47,7 +47,7 @@ from actinia_grassdata_management_plugin.processing.common.vector_layer import (
     start_info_job,
 )
 from actinia_grassdata_management_plugin.rest.base.map_layer_base import (
-    MapLayerRegionResourceBase
+    MapLayerRegionResourceBase,
 )
 
 __license__ = "GPLv3"
