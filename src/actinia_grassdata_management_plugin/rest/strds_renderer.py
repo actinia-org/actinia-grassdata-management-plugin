@@ -29,7 +29,7 @@ from actinia_core.core.common.kvdb_interface import enqueue_job
 from actinia_core.rest.base.renderer_base import RendererBaseResource
 import os
 from flask_restful_swagger_2 import swagger
-from actinia_api.swagger2.actinia_core.apidocs import strds_renderer
+from actinia_api.swagger2.actinia_grassdata_management_plugin.apidocs import strds_renderer
 
 from actinia_core.rest.base.endpoint_config import (
     check_endpoint,

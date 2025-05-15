@@ -24,7 +24,7 @@
 """
 Vector layer resources
 """
-from actinia_api.swagger2.actinia_core.schemas.vector_layer import (
+from actinia_api.swagger2.actinia_grassdata_management_plugin.schemas.vector_layer import (
     VectorInfoResponseModel,
     VectorAttributeModel,
     VectorInfoModel,

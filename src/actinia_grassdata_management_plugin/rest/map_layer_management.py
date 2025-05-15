@@ -27,7 +27,7 @@ Raster layer resources
 from flask import jsonify, make_response
 from flask_restful_swagger_2 import swagger
 import pickle
-from actinia_api.swagger2.actinia_core.apidocs import map_layer_management
+from actinia_api.swagger2.actinia_grassdata_management_plugin.apidocs import map_layer_management
 
 from actinia_core.core.common.kvdb_interface import enqueue_job
 from actinia_core.rest.base.endpoint_config import (

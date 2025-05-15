@@ -31,7 +31,7 @@ import pickle
 from uuid import uuid4
 from werkzeug.utils import secure_filename
 from zipfile import ZipFile
-from actinia_api.swagger2.actinia_core.apidocs import vector_layer
+from actinia_api.swagger2.actinia_grassdata_management_plugin.apidocs import vector_layer
 
 from actinia_core.rest.base.endpoint_config import (
     check_endpoint,
