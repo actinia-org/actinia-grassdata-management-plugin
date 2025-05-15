@@ -176,7 +176,8 @@ class ListRasterLayersTestCase(ActiniaResourceTestCaseBase):
 
         # # Delete raster layers
         # rv = self.server.delete(
-        #     f"{URL_PREFIX}/{self.project_url_part}/nc_spm_08/mapsets/user1/raster_layers?"
+        #     f"{URL_PREFIX}/{self.project_url_part}/nc_spm_08/mapsets/user1/"
+        #     "raster_layers?"
         #     "pattern=test_delete_layer_*",
         #     headers=self.user_auth_header
         # )

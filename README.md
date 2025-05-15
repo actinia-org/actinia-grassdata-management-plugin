@@ -62,9 +62,7 @@ You can run the tests in the actinia test docker:
 
 ```bash
 docker build -f docker/actinia-grassdata-management-plugin-test/Dockerfile -t actinia-grassdata-management-plugin-test .
-docker run -it actinia-grassdata-management-plugin-test -i
-
-cd /src/actinia-grassdata-management-plugin/
+docker run -it -w /src/actinia-grassdata-management-plugin/ actinia-grassdata-management-plugin-test -i
 
 # run all tests
 make test
