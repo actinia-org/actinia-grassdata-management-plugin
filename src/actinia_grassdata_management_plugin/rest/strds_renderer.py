@@ -30,7 +30,7 @@ from actinia_core.rest.base.renderer_base import RendererBaseResource
 import os
 from flask_restful_swagger_2 import swagger
 from actinia_api.swagger2.actinia_grassdata_management_plugin.apidocs import (
-    strds_renderer
+    strds_renderer,
 )
 
 from actinia_core.rest.base.endpoint_config import (

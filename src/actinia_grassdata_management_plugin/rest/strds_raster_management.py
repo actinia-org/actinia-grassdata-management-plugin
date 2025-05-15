@@ -30,7 +30,7 @@ from flask_restful_swagger_2 import swagger
 from flask import jsonify, make_response
 import pickle
 from actinia_api.swagger2.actinia_grassdata_management_plugin.apidocs import (
-    strds_raster_management
+    strds_raster_management,
 )
 
 from actinia_core.rest.base.endpoint_config import (
