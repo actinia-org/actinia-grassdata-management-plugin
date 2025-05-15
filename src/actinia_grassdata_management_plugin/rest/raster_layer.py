@@ -30,7 +30,9 @@ import os
 import pickle
 from uuid import uuid4
 from werkzeug.utils import secure_filename
-from actinia_api.swagger2.actinia_grassdata_management_plugin.apidocs import raster_layer
+from actinia_api.swagger2.actinia_grassdata_management_plugin.apidocs import (
+    raster_layer
+)
 
 from actinia_core.core.common.kvdb_interface import enqueue_job
 from actinia_core.rest.base.endpoint_config import (

@@ -29,7 +29,9 @@ Raster map renderer
 import os
 from flask_restful_swagger_2 import swagger
 from flask import jsonify, make_response, Response
-from actinia_api.swagger2.actinia_grassdata_management_plugin.apidocs import vector_renderer
+from actinia_api.swagger2.actinia_grassdata_management_plugin.apidocs import (
+    vector_renderer
+)
 
 from actinia_core.rest.base.endpoint_config import (
     check_endpoint,

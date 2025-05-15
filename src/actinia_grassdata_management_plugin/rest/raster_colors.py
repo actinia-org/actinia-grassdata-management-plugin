@@ -29,7 +29,9 @@ TODO: Maybe more tests required, test_raster_colors.py is in place and works
 
 from flask_restful_swagger_2 import swagger
 from flask import jsonify, make_response
-from actinia_api.swagger2.actinia_grassdata_management_plugin.apidocs import raster_colors
+from actinia_api.swagger2.actinia_grassdata_management_plugin.apidocs import (
+    raster_colors
+)
 
 from actinia_core.core.common.kvdb_interface import enqueue_job
 from actinia_core.rest.base.endpoint_config import (
