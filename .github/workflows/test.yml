@@ -23,7 +23,7 @@ jobs:
       - name: Replace run integration test command
         run: |
           sed -i "s+# RUN make test+RUN make integrationtest+g" \
-              docker/actinia-core-tests/Dockerfile
+              docker/actinia-grassdata-management-plugin-test/Dockerfile
       - name: Integration tests of actinia-grassdata-management-plugin
         id: docker_build
         uses: docker/build-push-action@v6
@@ -49,7 +49,7 @@ jobs:
             sed -i "s+mundialis/actinia:latest+mundialis/actinia:grass8.3+g" \
                 docker/actinia-grassdata-management-plugin-test/Dockerfile
             sed -i "s+# RUN make test+RUN make integrationtest+g" \
-                docker/actinia-core-tests/Dockerfile
+                docker/actinia-grassdata-management-plugin-test/Dockerfile
       - name: Integration tests of actinia-grassdata-management-plugin
         id: docker_build
         uses: docker/build-push-action@v6
