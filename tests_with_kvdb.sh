@@ -17,6 +17,9 @@ if [ "$1" = "dev" ]
 then
   echo "Executing only 'dev' tests ..."
   pytest -m "dev"
+elif [ "$1" = "integrationtest" ]
+then
+  pytest -m 'not unittest'
 else
   pytest
 fi

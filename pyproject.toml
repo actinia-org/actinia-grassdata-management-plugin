@@ -54,5 +54,4 @@ testpaths = [
 markers = [
     "dev: test current in development",
     "unittest: completely independent test",
-    "integrationtest: integration test",
 ]

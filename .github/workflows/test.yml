@@ -11,7 +11,7 @@ on:
 
 jobs:
 
-  tests-G84:
+  integration-tests-G84:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -20,6 +20,10 @@ jobs:
         #   path: "."
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+      - name: Replace run integration test command
+        run: |
+          sed -i "s+# RUN make test+RUN make integrationtest+g" \
+              docker/actinia-core-tests/Dockerfile
       - name: Integration tests of actinia-grassdata-management-plugin
         id: docker_build
         uses: docker/build-push-action@v6
@@ -31,7 +35,7 @@ jobs:
           no-cache: true
           # pull: true
 
-  tests-G83:
+  integration-tests-G83:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -44,6 +48,8 @@ jobs:
         run: |
             sed -i "s+mundialis/actinia:latest+mundialis/actinia:grass8.3+g" \
                 docker/actinia-grassdata-management-plugin-test/Dockerfile
+            sed -i "s+# RUN make test+RUN make integrationtest+g" \
+                docker/actinia-core-tests/Dockerfile
       - name: Integration tests of actinia-grassdata-management-plugin
         id: docker_build
         uses: docker/build-push-action@v6
