@@ -36,7 +36,7 @@ dependencies = [
     "actinia-core>=6.0.1",
     "Flask>=3.0.0",
     "pwgen",
-    "setuptools==79.0.1",
+    "setuptools==80.8.0",
     "werkzeug>=3.1.3",
 ]
 
