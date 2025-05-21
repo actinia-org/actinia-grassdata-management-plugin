@@ -5,14 +5,19 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "actinia-grassdata-management-plugin"
 version = "1.0.0"
-description = "An actinia-core plugin which adds example endpoints to actinia-core"
+description = "An actinia-core plugin which adds vector- raster and STRDS enpoints to actinia-core"
 readme = "README.md"
 authors = [
     { name = "Carmen Tawalika"},
     { name = "Anika Weinmann"},
+    { name = "Guido Riembauer"},
+    { name = "Marc Jansen"},
+    { name = "Sören Gebbert"},
+    { name = "Markus Neteler"},
+    { name = "and more"}
 ]
+license = "GPL-3.0-or-later"
 classifiers = [
-    "License :: OSI Approved :: Apache Software License",
     "Programming Language :: Python :: 3",
 ]
 requires-python = ">=3.8"
@@ -24,11 +29,15 @@ keywords = [
     "gis",
     "grass gis",
     "osgeo",
-    "example",
+    "data management",
 ]
 dependencies = [
-    "colorlog>=4.2.1",
-    "xmltodict",
+    "actinia-api>=3.7.0",
+    "actinia-core>=6.0.1",
+    "Flask>=3.0.0",
+    "pwgen",
+    "setuptools==79.0.1",
+    "werkzeug>=3.1.3",
 ]
 
 [project.optional-dependencies]
@@ -39,11 +48,15 @@ test = [
 
 [project.urls]
 Homepage = "https://github.com/mundialis/actinia-grassdata-management-plugin"
-Tutorial = "https://mundialis.github.io/actinia_core"
+Tutorial = "https://actinia-org.github.io/actinia-core"
 API_Docs = "https://redocly.github.io/redoc/?url=https://actinia.mundialis.de/latest/swagger.json"
 
 [tool.flake8]
 max-line-length = 79
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
 
 [tool.pytest.ini_options]
 minversion = "6.0"
@@ -54,5 +67,4 @@ testpaths = [
 markers = [
     "dev: test current in development",
     "unittest: completely independent test",
-    "integrationtest: integration test",
 ]

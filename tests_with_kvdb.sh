@@ -19,10 +19,10 @@ then
   pytest -m "dev"
 elif [ "$1" = "integrationtest" ]
 then
-  pytest -m "integrationtest"
-elif [ "$1" = "unittest" ]
-then
-  pytest -m "unittest"
+  # Currently there are no unittests.
+  # If there ever will be, exclude them here
+  # pytest -m 'not unittest'
+  pytest
 else
   pytest
 fi
