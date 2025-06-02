@@ -40,9 +40,9 @@ from actinia_core.rest.base.endpoint_config import (
     endpoint_decorator,
 )
 from actinia_core.core.common.kvdb_interface import enqueue_job
-from actinia_core.core.utils import allowed_file
 from actinia_core.models.response_models import SimpleResponseModel
 
+from actinia_grassdata_management_plugin.core.utils import allowed_file
 from actinia_grassdata_management_plugin.processing.common.vector_layer import (  # noqa: E501
     start_create_job,
     start_delete_job,
