@@ -27,7 +27,7 @@ Vector layer resources
 import os
 from shutil import rmtree
 
-from actinia_core.core.common.exceptions import AsyncProcessError
+from actinia_processing_lib.exceptions import AsyncProcessError
 from actinia_processing_lib.persistent_processing import PersistentProcessing
 
 __license__ = "GPLv3"

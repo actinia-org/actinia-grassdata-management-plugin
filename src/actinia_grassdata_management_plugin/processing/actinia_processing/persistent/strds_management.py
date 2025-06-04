@@ -32,7 +32,7 @@ from actinia_api.swagger2.actinia_grassdata_management_plugin.schemas.strds_mana
 )
 
 from actinia_processing_lib.persistent_processing import PersistentProcessing
-from actinia_core.core.common.exceptions import AsyncProcessError
+from actinia_processing_lib.exceptions import AsyncProcessError
 from actinia_core.models.response_models import (
     StringListProcessingResultResponseModel,
 )

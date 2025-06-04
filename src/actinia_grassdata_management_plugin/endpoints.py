@@ -22,7 +22,6 @@ __author__ = "Carmen Tawalika, Anika Weinmann"
 __copyright__ = "Copyright 2022-2024 mundialis GmbH & Co. KG"
 __maintainer__ = "mundialis GmbH & Co. KG"
 
-from actinia_core.endpoints import get_endpoint_class_name
 from flask_restful_swagger_2 import Api
 
 from actinia_grassdata_management_plugin.rest.map_layer_management import (
@@ -65,6 +64,15 @@ from actinia_grassdata_management_plugin.rest.vector_layer import (
 from actinia_grassdata_management_plugin.rest.vector_renderer import (
     SyncEphemeralVectorRendererResource,
 )
+
+
+def get_endpoint_class_name(endpoint_class, projects_url_part="projects"):
+    endpoint_class_name = endpoint_class.__name__.lower()
+    if projects_url_part != "projects":
+        name = f"{endpoint_class_name}_{projects_url_part}"
+    else:
+        name = endpoint_class_name
+    return name
 
 
 def create_project_endpoints(

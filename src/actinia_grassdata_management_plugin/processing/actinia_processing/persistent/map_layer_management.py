@@ -25,7 +25,7 @@
 Raster layer resources
 """
 from actinia_processing_lib.persistent_processing import PersistentProcessing
-from actinia_core.core.common.exceptions import AsyncProcessError
+from actinia_processing_lib.exceptions import AsyncProcessError
 from actinia_core.models.response_models import (
     StringListProcessingResultResponseModel,
 )
