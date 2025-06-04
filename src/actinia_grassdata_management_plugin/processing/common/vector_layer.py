@@ -25,7 +25,7 @@
 Vector layer resources
 """
 
-from actinia_core.processing.common.utils import try_import
+from actinia_processing_lib.utils import try_import
 
 __license__ = "GPLv3"
 __author__ = "Sören Gebbert, Carmen Tawalika, Guido Riembauer, Anika Weinmann"

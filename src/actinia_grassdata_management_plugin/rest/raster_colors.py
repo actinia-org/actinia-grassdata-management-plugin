@@ -34,11 +34,11 @@ from actinia_api.swagger2.actinia_grassdata_management_plugin.apidocs import (
 )
 
 from actinia_core.core.common.kvdb_interface import enqueue_job
-from actinia_core.rest.base.endpoint_config import (
+from actinia_rest_lib.rest.base.endpoint_config import (
     check_endpoint,
     endpoint_decorator,
 )
-from actinia_core.rest.base.resource_base import ResourceBase
+from actinia_rest_lib.rest.base.resource_base import ResourceBase
 
 from actinia_grassdata_management_plugin.processing.common.raster_colors import (  # noqa: E501
     start_job_colors_out,

@@ -32,7 +32,7 @@ from flask import jsonify, make_response, Response
 from actinia_api.swagger2.actinia_grassdata_management_plugin.apidocs import (
     vector_renderer,
 )
-from actinia_core.rest.base.endpoint_config import (
+from actinia_rest_lib.rest.base.endpoint_config import (
     check_endpoint,
     endpoint_decorator,
 )

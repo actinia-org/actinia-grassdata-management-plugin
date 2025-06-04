@@ -28,9 +28,7 @@ TODO: Maybe more tests required, test_raster_colors.py is in place and works
 """
 
 from tempfile import NamedTemporaryFile
-from actinia_core.processing.actinia_processing.ephemeral_processing import (
-    EphemeralProcessing,
-)
+from actinia_processing_lib.ephemeral_processing import EphemeralProcessing
 
 __license__ = "GPLv3"
 __author__ = "Sören Gebbert, Carmen Tawalika"

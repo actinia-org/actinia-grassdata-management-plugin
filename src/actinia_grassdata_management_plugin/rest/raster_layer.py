@@ -35,7 +35,7 @@ from actinia_api.swagger2.actinia_grassdata_management_plugin.apidocs import (
 )
 
 from actinia_core.core.common.kvdb_interface import enqueue_job
-from actinia_core.rest.base.endpoint_config import (
+from actinia_rest_lib.rest.base.endpoint_config import (
     check_endpoint,
     endpoint_decorator,
 )
