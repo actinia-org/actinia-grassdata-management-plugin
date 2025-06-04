@@ -26,7 +26,7 @@ Raster layer resources
 """
 
 from flask_restful import reqparse
-from actinia_rest_lib.rest.base.resource_base import ResourceBase
+from actinia_rest_lib.resource_base import ResourceBase
 
 __license__ = "GPLv3"
 __author__ = "Sören Gebbert, Carmen Tawalika"
