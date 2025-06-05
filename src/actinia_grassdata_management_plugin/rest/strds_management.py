@@ -42,7 +42,7 @@ from actinia_rest_lib.resource_base import ResourceBase
 from actinia_core.core.common.kvdb_interface import enqueue_job
 
 from actinia_grassdata_management_plugin.core.request_parser import (
-    where_parser
+    where_parser,
 )
 from actinia_grassdata_management_plugin.processing.common.strds_management import (  # noqa: E501
     list_raster_mapsets,

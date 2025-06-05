@@ -40,7 +40,7 @@ from actinia_grassdata_management_plugin.processing.common.strds_renderer import
     start_job,
 )
 from actinia_grassdata_management_plugin.rest.base.renderer_base import (
-    RendererBaseResource
+    RendererBaseResource,
 )
 
 __license__ = "GPLv3"

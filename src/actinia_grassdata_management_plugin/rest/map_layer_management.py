@@ -39,7 +39,7 @@ from actinia_rest_lib.endpoint_config import (
 from actinia_rest_lib.resource_base import ResourceBase
 
 from actinia_grassdata_management_plugin.core.request_parser import (
-    glist_parser
+    glist_parser,
 )
 from actinia_grassdata_management_plugin.processing.common.map_layer_management import (  # noqa: E501
     list_raster_layers,

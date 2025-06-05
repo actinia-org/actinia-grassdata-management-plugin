@@ -31,7 +31,7 @@ from actinia_core.models.response_models import (
 )
 
 from actinia_grassdata_management_plugin.core.request_parser import (
-    extract_glist_parameters
+    extract_glist_parameters,
 )
 
 __license__ = "GPLv3"

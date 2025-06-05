@@ -43,7 +43,7 @@ from actinia_grassdata_management_plugin.processing.common.raster_renderer impor
     start_shade_job,
 )
 from actinia_grassdata_management_plugin.rest.base.renderer_base import (
-    RendererBaseResource
+    RendererBaseResource,
 )
 
 __license__ = "GPLv3"

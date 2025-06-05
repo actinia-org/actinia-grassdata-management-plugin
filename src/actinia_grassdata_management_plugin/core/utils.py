@@ -54,8 +54,8 @@ __email__ = "info@mundialis.de"
 #         path: joined normalized path
 
 #     Raise:
-#         - raises a TypeError if the intent is not 'r', 'w' or 'rw'
-#         - raises a SecurityError if the path is not valid for the given intent
+#       - raises a TypeError if the intent is not 'r', 'w' or 'rw'
+#       - raises a SecurityError if the path is not valid for the given intent
 #     """
 #     allowed_intents = ["r", "w", "rw"]
 #     if intent not in allowed_intents:
@@ -79,9 +79,9 @@ __email__ = "info@mundialis.de"
 
 
 # def path_is_in_allowed_read_and_write_paths(path):
-#     """Checks whether the passed path is a valid read and write path, uses the
-#     global_config variables `GRASS_USER_DATABASE` and `GRASS_RESOURCE_DIR`
-#     for the check.
+#     """Checks whether the passed path is a valid read and write path, uses
+#     the global_config variables `GRASS_USER_DATABASE` and
+#    `GRASS_RESOURCE_DIR` for the check.
 
 #     Args:
 #         path (string): a normalized path
@@ -115,8 +115,8 @@ __email__ = "info@mundialis.de"
 
 # def path_is_in_allowed_write_paths(path):
 #     """Checks whether the passed path is a valid write path, uses the
-#     global_config variables `GRASS_USER_DATABASE` and `GRASS_RESOURCE_DIR` for
-#     the check.
+#     global_config variables `GRASS_USER_DATABASE` and `GRASS_RESOURCE_DIR`
+#     for the check.
 
 #     Args:
 #         path (string): a normalized path
