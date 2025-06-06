@@ -34,6 +34,8 @@ keywords = [
 dependencies = [
     "actinia-api>=3.7.0",
     "actinia-core>=6.0.1",
+    "actinia-rest-lib>=1.0.0",
+    "actinia-processing-lib>=1.0.0",
     "Flask>=3.0.0",
     "pwgen",
     "setuptools==79.0.1",
