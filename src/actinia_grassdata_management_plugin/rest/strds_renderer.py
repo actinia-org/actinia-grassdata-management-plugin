@@ -24,21 +24,23 @@
 """
 Raster map renderer
 """
-from flask import jsonify, make_response, Response
-from actinia_core.core.common.kvdb_interface import enqueue_job
-from actinia_core.rest.base.renderer_base import RendererBaseResource
 import os
+from flask import jsonify, make_response, Response
 from flask_restful_swagger_2 import swagger
 from actinia_api.swagger2.actinia_grassdata_management_plugin.apidocs import (
     strds_renderer,
 )
-
-from actinia_core.rest.base.endpoint_config import (
+from actinia_rest_lib.endpoint_config import (
     check_endpoint,
     endpoint_decorator,
 )
+from actinia_core.core.common.kvdb_interface import enqueue_job
+
 from actinia_grassdata_management_plugin.processing.common.strds_renderer import (  # noqa: E501
     start_job,
+)
+from actinia_grassdata_management_plugin.rest.base.renderer_base import (
+    RendererBaseResource,
 )
 
 __license__ = "GPLv3"

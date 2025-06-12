@@ -24,13 +24,14 @@
 """
 Raster layer resources
 """
-from actinia_core.processing.actinia_processing.ephemeral.persistent_processing import (  # noqa: E501
-    PersistentProcessing,
-)
-from actinia_core.core.request_parser import extract_glist_parameters
-from actinia_core.core.common.exceptions import AsyncProcessError
+from actinia_processing_lib.persistent_processing import PersistentProcessing
+from actinia_processing_lib.exceptions import AsyncProcessError
 from actinia_core.models.response_models import (
     StringListProcessingResultResponseModel,
+)
+
+from actinia_grassdata_management_plugin.core.request_parser import (
+    extract_glist_parameters,
 )
 
 __license__ = "GPLv3"

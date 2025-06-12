@@ -25,10 +25,8 @@
 Raster layer resources
 """
 import os
-from actinia_core.processing.actinia_processing.ephemeral.persistent_processing import (  # noqa: E501
-    PersistentProcessing,
-)
-from actinia_core.core.common.exceptions import AsyncProcessError
+from actinia_processing_lib.persistent_processing import PersistentProcessing
+from actinia_processing_lib.exceptions import AsyncProcessError
 
 __license__ = "GPLv3"
 __author__ = "Sören Gebbert, Carmen Tawalika, Guido Riembauer, Anika Weinmann"

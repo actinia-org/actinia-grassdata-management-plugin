@@ -35,13 +35,13 @@ from actinia_api.swagger2.actinia_grassdata_management_plugin.apidocs import (
 )
 
 from actinia_core.core.common.kvdb_interface import enqueue_job
-from actinia_core.rest.base.endpoint_config import (
+from actinia_rest_lib.endpoint_config import (
     check_endpoint,
     endpoint_decorator,
 )
-from actinia_core.core.utils import allowed_file
 from actinia_core.models.response_models import SimpleResponseModel
 
+from actinia_grassdata_management_plugin.core.utils import allowed_file
 from actinia_grassdata_management_plugin.processing.common.raster_layer import (  # noqa: E501
     start_info_job,
     start_delete_job,

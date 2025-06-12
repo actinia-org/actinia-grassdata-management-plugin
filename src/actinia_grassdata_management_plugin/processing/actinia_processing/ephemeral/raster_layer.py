@@ -28,9 +28,7 @@ Raster layer resources
 from actinia_api.swagger2.actinia_grassdata_management_plugin.schemas.raster_layer import (  # noqa: E501
     RasterInfoModel,
 )
-from actinia_core.processing.actinia_processing.ephemeral_processing import (
-    EphemeralProcessing,
-)
+from actinia_processing_lib.ephemeral_processing import EphemeralProcessing
 
 __license__ = "GPLv3"
 __author__ = "Sören Gebbert, Carmen Tawalika, Guido Riembauer, Anika Weinmann"
