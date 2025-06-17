@@ -85,8 +85,12 @@ class UploadVectorLayerTestCase(ActiniaResourceTestCaseBase):
     tmp_mapset = "mapset_upload"
     vector = "testvector"
     local_geojson = f"/tmp/{vector}.geojson"
-    gpkg_file = "/src/actinia_core/tests/data/nc_test_poly.gpkg"
-    zipped_shp_file = "/src/actinia_core/tests/data/nc_test_poly.zip"
+    gpkg_file = (
+        "/src/actinia-grassdata-management-plugin/tests/data/nc_test_poly.gpkg"
+    )
+    zipped_shp_file = (
+        "/src/actinia-grassdata-management-plugin/tests/data/nc_test_poly.zip"
+    )
 
     ref_info = {
         "Attributes": [{"column": "cat", "type": "INTEGER"}],
@@ -110,28 +114,28 @@ class UploadVectorLayerTestCase(ActiniaResourceTestCaseBase):
     }
 
     @classmethod
-    def setUpClass(cls):
+    def setUpClass(cls) -> None:
         # download a vector to re-upload it
-        super(UploadVectorLayerTestCase, cls).setUpClass()
+        super().setUpClass()
 
         # write GeoJSON
         with open(cls.local_geojson, "w") as geojson:
             geojson.write(geojson_data)
 
     @classmethod
-    def tearDownClass(cls):
+    def tearDownClass(cls) -> None:
         # remove GeoJSON
         os.remove(cls.local_geojson)
 
     def setUp(self):
         # create new temp mapset
-        super(UploadVectorLayerTestCase, self).setUp()
+        super().setUp()
         self.create_new_mapset(self.tmp_mapset, project_name=self.project)
 
     def tearDown(self):
         # delete mapset
         self.delete_mapset(self.tmp_mapset, project_name=self.project)
-        super(UploadVectorLayerTestCase, self).tearDown()
+        super().tearDown()
 
     def test_upload_vector_geojson_userdb(self):
         """

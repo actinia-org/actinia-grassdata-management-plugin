@@ -71,5 +71,9 @@ lint.ignore = [
     "S107",
 ]
 
-# [lint.per-file-ignores]
-# "src/actinia_grassdata_management_plugin/apidocs/__init__.py" = [ "E501",]
+[lint.per-file-ignores]
+"tests/*" = [
+    "FURB103",
+    "S108",
+    "S113",
+]

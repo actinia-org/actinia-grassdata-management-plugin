@@ -47,6 +47,22 @@ KVDB_PID = None
 SERVER_TEST = False
 CUSTOM_ACTINIA_CFG = False
 
+base_url_data = "https://apps.mundialis.de/actinia_test_datasets"
+additional_external_data = {
+    "rio_json": f"{base_url_data}/rio.json",
+    "brazil_json": f"{base_url_data}/brazil_polygon.json",
+    "elev_ned_30m_tif": f"{base_url_data}/elev_ned_30m.tif",
+    "elev_ned_30m_epsg4326_tif": f"{base_url_data}/elev_ned_30m_epsg4326.tif",
+    "elev_ned_30m_nope_tif": f"{base_url_data}/elev_ned_30m_nope.tif",
+    "polygon_gml": f"{base_url_data}/polygon.gml",
+    "census_wake2000_gml": f"{base_url_data}/census_wake2000.gml",
+    "census_wake2000_zip": f"{base_url_data}/census_wake2000.zip",
+    "geology_30m_tif": f"{base_url_data}/geology_30m.tif",
+    "geology_30m_zip": f"{base_url_data}/geology_30m.zip",
+    "pointInBonn": f"{base_url_data}/pointInBonn.geojson",
+    "elevation": f"{base_url_data}/elevation.tif",
+}
+
 # If this environmental variable is set, then a real http request will be send
 # instead of using the flask test_client.
 if "ACTINIA_SERVER_TEST" in os.environ:

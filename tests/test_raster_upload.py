@@ -72,9 +72,9 @@ class UploadRasterLayerTestCase(ActiniaResourceTestCaseBase):
     }
 
     @classmethod
-    def setUpClass(cls):
+    def setUpClass(cls) -> None:
         # download a raster to re-upload it
-        super(UploadRasterLayerTestCase, cls).setUpClass()
+        super().setUpClass()
 
         resp_download = requests.get(cls.raster_url)
         if resp_download.status_code == 200:
@@ -83,18 +83,18 @@ class UploadRasterLayerTestCase(ActiniaResourceTestCaseBase):
                     out.write(bits)
 
     @classmethod
-    def tearDownClass(cls):
+    def tearDownClass(cls) -> None:
         os.remove(cls.local_raster)
 
     def setUp(self):
         # create new temp mapset
-        super(UploadRasterLayerTestCase, self).setUp()
+        super().setUp()
         self.create_new_mapset(self.tmp_mapset, project_name=self.project)
 
     def tearDown(self):
         # delete mapset
         self.delete_mapset(self.tmp_mapset, project_name=self.project)
-        super(UploadRasterLayerTestCase, self).tearDown()
+        super().tearDown()
 
     def test_upload_raster_userdb(self):
         """
