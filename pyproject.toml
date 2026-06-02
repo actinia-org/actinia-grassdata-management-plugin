@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "actinia-grassdata-management-plugin"
-version = "1.0.0"
+version = "1.0.1"
 description = "An actinia-core plugin which adds vector- raster and STRDS enpoints to actinia-core"
 readme = "README.md"
 authors = [
