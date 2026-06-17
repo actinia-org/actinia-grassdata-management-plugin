@@ -241,7 +241,7 @@ class SyncEphemeralRasterShapeRendererResource(RendererBaseResource):
         check_endpoint("get", raster_renderer.raster_shade_render_get_doc)
     )
     def get(self, project_name, mapset_name):
-        """Render two raster layers as a composed shade PNG image"""
+        """Render two raster layers as a composed shade PNG image."""
         parser = self.create_parser()
         parser.add_argument(
             "shade",

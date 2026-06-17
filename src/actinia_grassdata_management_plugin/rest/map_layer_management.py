@@ -64,8 +64,7 @@ class MapsetLayersResource(ResourceBase):
         self.layer_type = layer_type
 
     def _get(self, project_name, mapset_name):
-        """Return a collection of all available layers
-        in the provided mapset.
+        """Return a collection of all available layers in the provided mapset.
 
         Optionally can g.list parameters be provided::
 
@@ -221,16 +220,16 @@ class RasterLayersResource(MapsetLayersResource):
     @endpoint_decorator()
     @swagger.doc(check_endpoint("get", map_layer_management.raster_get_doc))
     def get(self, project_name, mapset_name):
-        """Get a list of raster map layer names that are located in a specific
-        project/mapset
+        """
+        Get a list of raster map layer names.
         """
         return self._get(project_name, mapset_name)
 
     @endpoint_decorator()
     @swagger.doc(check_endpoint("put", map_layer_management.raster_put_doc))
     def put(self, project_name, mapset_name):
-        """Rename a single raster map layer or a list of raster map layers that
-        are located in a specific project/mapset
+        """
+        Rename a single raster map layer or a list of raster map layers.
         """
         return self._put(project_name, mapset_name)
 
@@ -239,8 +238,8 @@ class RasterLayersResource(MapsetLayersResource):
         check_endpoint("delete", map_layer_management.raster_delete_doc)
     )
     def delete(self, project_name, mapset_name):
-        """Delete a single raster map layer or a list of raster map layer names
-        that are located in a specific project/mapset
+        """
+        Delete a single raster map layer or a list of raster map layer names.
         """
         return self._delete(project_name, mapset_name)
 
@@ -254,16 +253,15 @@ class VectorLayersResource(MapsetLayersResource):
     @endpoint_decorator()
     @swagger.doc(check_endpoint("get", map_layer_management.vector_get_doc))
     def get(self, project_name, mapset_name):
-        """Get a list of vector map layer names that are located in a specific
-        project/mapset
+        """
+        Get a list of vector map layer names.
         """
         return self._get(project_name, mapset_name)
 
     @endpoint_decorator()
     @swagger.doc(check_endpoint("put", map_layer_management.vector_put_doc))
     def put(self, project_name, mapset_name):
-        """Rename a single vector map layer or a list of vector map layers that
-        are located in a specific project/mapset
+        """Rename a single vector map layer or a list of vector map layers.
         """
         return self._put(project_name, mapset_name)
 
@@ -272,7 +270,6 @@ class VectorLayersResource(MapsetLayersResource):
         check_endpoint("delete", map_layer_management.vector_delete_doc)
     )
     def delete(self, project_name, mapset_name):
-        """Delete a single vector map layer or a list of vector map layer names
-        that are located in a specific project/mapset
+        """Delete a single vector map layer or a list of vector map layers.
         """
         return self._delete(project_name, mapset_name)

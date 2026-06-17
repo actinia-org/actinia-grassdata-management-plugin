@@ -117,8 +117,8 @@ class VectorLayerResource(MapLayerRegionResourceBase):
     @endpoint_decorator()
     @swagger.doc(check_endpoint("post", vector_layer.post_doc))
     def post(self, project_name, mapset_name, vector_name):
-        """Create a new vector layer by uploading a GPKG, zipped Shapefile,
-        or GeoJSON.
+        """
+        Create a vector layer from GPKG, Shapefile, or GeoJSON upload.
         """
 
         allowed_extensions = ["gpkg", "zip", "json", "geojson"]

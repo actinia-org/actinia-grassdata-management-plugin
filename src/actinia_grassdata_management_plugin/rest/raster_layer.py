@@ -114,7 +114,7 @@ class RasterLayerResource(MapLayerRegionResourceBase):
     @endpoint_decorator()
     @swagger.doc(check_endpoint("post", raster_layer.post_doc))
     def post(self, project_name, mapset_name, raster_name):
-        """Create a new raster layer by uploading a GeoTIFF"""
+        """Create a new raster layer by uploading a GeoTIFF."""
 
         allowed_extensions = ["tif", "tiff"]
 
