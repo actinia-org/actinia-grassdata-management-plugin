@@ -66,22 +66,16 @@ from actinia_grassdata_management_plugin.rest.vector_renderer import (
 )
 
 
-def get_endpoint_class_name(
-    endpoint_class: Resource ) -> str:
+def get_endpoint_class_name(endpoint_class: Resource) -> str:
     """Create the name for the given endpoint class."""
-
     return endpoint_class.__name__.lower()
 
 
-def create_project_endpoints(
-    flask_api: Api) -> None:
+def create_project_endpoints(flask_api: Api) -> None:
     """Add resources with "project" inside the endpoint url to the api.
-
     Args:
-        apidoc (Api): Flask api
-        
+        apidoc (Api): Flask api.
     """
-
     # Raster management
     flask_api.add_resource(
         RasterLayersResource,
@@ -89,8 +83,7 @@ def create_project_endpoints(
         "<string:mapset_name>/raster_layers",
         "/locations/<string:project_name>/mapsets/"
         "<string:mapset_name>/raster_layers",
-        endpoint=get_endpoint_class_name(
-            RasterLayersResource),
+        endpoint=get_endpoint_class_name(RasterLayersResource),
     )
     flask_api.add_resource(
         RasterLayerResource,
@@ -98,8 +91,7 @@ def create_project_endpoints(
         "<string:mapset_name>/raster_layers/<string:raster_name>",
         "/locations/<string:project_name>/mapsets/"
         "<string:mapset_name>/raster_layers/<string:raster_name>",
-        endpoint=get_endpoint_class_name(
-            RasterLayerResource),
+        endpoint=get_endpoint_class_name(RasterLayerResource),
     )
     flask_api.add_resource(
         SyncEphemeralRasterLegendResource,
@@ -107,8 +99,7 @@ def create_project_endpoints(
         "<string:mapset_name>/raster_layers/<string:raster_name>/legend",
         "/locations/<string:project_name>/mapsets/"
         "<string:mapset_name>/raster_layers/<string:raster_name>/legend",
-        endpoint=get_endpoint_class_name(
-            SyncEphemeralRasterLegendResource),
+        endpoint=get_endpoint_class_name(SyncEphemeralRasterLegendResource),
     )
     flask_api.add_resource(
         SyncPersistentRasterColorsResource,
@@ -116,8 +107,7 @@ def create_project_endpoints(
         "<string:mapset_name>/raster_layers/<string:raster_name>/colors",
         "/locations/<string:project_name>/mapsets/"
         "<string:mapset_name>/raster_layers/<string:raster_name>/colors",
-        endpoint=get_endpoint_class_name(
-            SyncPersistentRasterColorsResource),
+        endpoint=get_endpoint_class_name(SyncPersistentRasterColorsResource),
     )
     flask_api.add_resource(
         SyncEphemeralRasterRendererResource,
@@ -125,8 +115,7 @@ def create_project_endpoints(
         "<string:mapset_name>/raster_layers/<string:raster_name>/render",
         "/locations/<string:project_name>/mapsets/"
         "<string:mapset_name>/raster_layers/<string:raster_name>/render",
-        endpoint=get_endpoint_class_name(
-            SyncEphemeralRasterRendererResource),
+        endpoint=get_endpoint_class_name(SyncEphemeralRasterRendererResource),
     )
     flask_api.add_resource(
         SyncEphemeralRasterRGBRendererResource,
@@ -135,7 +124,8 @@ def create_project_endpoints(
         "/locations/<string:project_name>/mapsets/"
         "<string:mapset_name>/render_rgb",
         endpoint=get_endpoint_class_name(
-            SyncEphemeralRasterRGBRendererResource),
+            SyncEphemeralRasterRGBRendererResource
+        ),
     )
     flask_api.add_resource(
         SyncEphemeralRasterShapeRendererResource,
@@ -144,7 +134,8 @@ def create_project_endpoints(
         "/locations/<string:project_name>/mapsets/"
         "<string:mapset_name>/render_shade",
         endpoint=get_endpoint_class_name(
-            SyncEphemeralRasterShapeRendererResource),
+            SyncEphemeralRasterShapeRendererResource
+        ),
     )
     # STRDS management
     flask_api.add_resource(
@@ -153,8 +144,7 @@ def create_project_endpoints(
         "<string:mapset_name>/strds",
         "/locations/<string:project_name>/mapsets/"
         "<string:mapset_name>/strds",
-        endpoint=get_endpoint_class_name(
-            SyncSTRDSListerResource),
+        endpoint=get_endpoint_class_name(SyncSTRDSListerResource),
     )
     flask_api.add_resource(
         STRDSManagementResource,
@@ -162,8 +152,7 @@ def create_project_endpoints(
         "<string:mapset_name>/strds/<string:strds_name>",
         "/locations/<string:project_name>/mapsets/"
         "<string:mapset_name>/strds/<string:strds_name>",
-        endpoint=get_endpoint_class_name(
-            STRDSManagementResource),
+        endpoint=get_endpoint_class_name(STRDSManagementResource),
     )
     flask_api.add_resource(
         STRDSRasterManagement,
@@ -171,8 +160,7 @@ def create_project_endpoints(
         "<string:mapset_name>/strds/<string:strds_name>/raster_layers",
         "/locations/<string:project_name>/mapsets/"
         "<string:mapset_name>/strds/<string:strds_name>/raster_layers",
-        endpoint=get_endpoint_class_name(
-            STRDSRasterManagement),
+        endpoint=get_endpoint_class_name(STRDSRasterManagement),
     )
     # Vector management
     flask_api.add_resource(
@@ -181,8 +169,7 @@ def create_project_endpoints(
         "<string:mapset_name>/vector_layers",
         "/locations/<string:project_name>/mapsets/"
         "<string:mapset_name>/vector_layers",
-        endpoint=get_endpoint_class_name(
-            VectorLayersResource),
+        endpoint=get_endpoint_class_name(VectorLayersResource),
     )
     flask_api.add_resource(
         VectorLayerResource,
@@ -190,8 +177,7 @@ def create_project_endpoints(
         "<string:mapset_name>/vector_layers/<string:vector_name>",
         "/locations/<string:project_name>/mapsets/"
         "<string:mapset_name>/vector_layers/<string:vector_name>",
-        endpoint=get_endpoint_class_name(
-            VectorLayerResource),
+        endpoint=get_endpoint_class_name(VectorLayerResource),
     )
     flask_api.add_resource(
         SyncEphemeralVectorRendererResource,
@@ -199,8 +185,7 @@ def create_project_endpoints(
         "<string:mapset_name>/vector_layers/<string:vector_name>/render",
         "/locations/<string:project_name>/mapsets/"
         "<string:mapset_name>/vector_layers/<string:vector_name>/render",
-        endpoint=get_endpoint_class_name(
-            SyncEphemeralVectorRendererResource),
+        endpoint=get_endpoint_class_name(SyncEphemeralVectorRendererResource),
     )
     flask_api.add_resource(
         SyncEphemeralSTRDSRendererResource,
@@ -208,8 +193,7 @@ def create_project_endpoints(
         "<string:mapset_name>/strds/<string:strds_name>/render",
         "/locations/<string:project_name>/mapsets/"
         "<string:mapset_name>/strds/<string:strds_name>/render",
-        endpoint=get_endpoint_class_name(
-            SyncEphemeralSTRDSRendererResource),
+        endpoint=get_endpoint_class_name(SyncEphemeralSTRDSRendererResource),
     )
 
 
@@ -219,4 +203,3 @@ def create_endpoints(flask_api: Api) -> None:
 
     # add deprecated location endpoints
     create_project_endpoints(flask_api)
-
