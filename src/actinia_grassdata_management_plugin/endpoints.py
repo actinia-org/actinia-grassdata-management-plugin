@@ -73,6 +73,7 @@ def get_endpoint_class_name(endpoint_class: Resource) -> str:
 
 def create_project_endpoints(flask_api: Api) -> None:
     """Add resources with "project" inside the endpoint url to the api.
+
     Args:
         apidoc (Api): Flask api.
     """
