@@ -24,6 +24,7 @@
 """
 Tests: Upload raster via endpoint test case
 """
+
 import os
 import unittest
 import requests
