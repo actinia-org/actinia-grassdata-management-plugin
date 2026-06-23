@@ -105,13 +105,14 @@ class UploadRasterLayerTestCase(ActiniaResourceTestCaseBase):
             f"{URL_PREFIX}/{self.project_url_part}/{self.project}/mapsets/"
             f"{self.tmp_mapset}/raster_layers/{self.raster}"
         )
-        multipart_form_data = {"file": open(self.local_raster, "rb")}
-        rv = self.server.post(
-            url,
-            content_type="multipart/form-data",
-            headers=self.user_auth_header,
-            data=multipart_form_data,
-        )
+        with open(self.local_raster, "rb") as f:
+            multipart_form_data = {"file": f}
+            rv = self.server.post(
+                url,
+                content_type="multipart/form-data",
+                headers=self.user_auth_header,
+                data=multipart_form_data,
+            )
 
         self.waitAsyncStatusAssertHTTP(
             rv,
@@ -134,13 +135,14 @@ class UploadRasterLayerTestCase(ActiniaResourceTestCaseBase):
             f"{URL_PREFIX}/{self.project_url_part}/{self.project}/mapsets/"
             f"{self.mapset}/raster_layers/{self.raster}"
         )
-        multipart_form_data = {"file": open(self.local_raster, "rb")}
-        rv = self.server.post(
-            url,
-            content_type="multipart/form-data",
-            headers=self.user_auth_header,
-            data=multipart_form_data,
-        )
+        with open(self.local_raster, "rb") as f:
+            multipart_form_data = {"file": f}
+            rv = self.server.post(
+                url,
+                content_type="multipart/form-data",
+                headers=self.user_auth_header,
+                data=multipart_form_data,
+            )
         self.waitAsyncStatusAssertHTTP(
             rv,
             headers=self.user_auth_header,
