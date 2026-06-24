@@ -58,7 +58,7 @@ class UploadRasterLayerTestCase(ActiniaResourceTestCaseBase):
 
     ref_info = {
         "cells": "226904",
-        "cols": "500",
+        "cols": "502",
         "east": "645000",
         "ewres": "30",
         "maptype": "raster",
