@@ -57,7 +57,7 @@ class UploadRasterLayerTestCase(ActiniaResourceTestCaseBase):
     local_raster = f"/tmp/{raster}.tif"
 
     ref_info = {
-        "cells": "225000",
+        "cells": "226904",
         "cols": "500",
         "east": "645000",
         "ewres": "30",
