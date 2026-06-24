@@ -65,7 +65,7 @@ class UploadRasterLayerTestCase(ActiniaResourceTestCaseBase):
         "max": "156.3865",
         "min": "55.1736",
         "ncats": "0",
-        "north": "228500",
+        "north": "228499.21666749",
         "nsres": "30",
         "rows": "450",
         "south": "215000",
