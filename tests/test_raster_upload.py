@@ -80,8 +80,7 @@ class UploadRasterLayerTestCase(ActiniaResourceTestCaseBase):
         resp_download = requests.get(cls.raster_url)
         if resp_download.status_code == 200:
             with open(cls.local_raster, "wb") as out:
-                for bits in resp_download.iter_content():
-                    out.write(bits)
+                out.writelines(resp_download.iter_content())
 
     @classmethod
     def tearDownClass(cls) -> None:
