@@ -60,7 +60,7 @@ class UploadRasterLayerTestCase(ActiniaResourceTestCaseBase):
         "cells": "226904",
         "cols": "502",
         "east": "645000.22656772",
-        "ewres": "30",
+        "ewres": "29.8804720349003",
         "maptype": "raster",
         "max": "156.3865",
         "min": "55.1736",
