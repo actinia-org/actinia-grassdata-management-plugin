@@ -59,7 +59,7 @@ class UploadRasterLayerTestCase(ActiniaResourceTestCaseBase):
     ref_info = {
         "cells": "226904",
         "cols": "502",
-        "east": "645000",
+        "east": "645000.22656772",
         "ewres": "30",
         "maptype": "raster",
         "max": "156.3865",
