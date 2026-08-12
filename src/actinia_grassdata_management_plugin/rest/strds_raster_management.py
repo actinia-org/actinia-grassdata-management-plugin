@@ -26,6 +26,7 @@ STRDS raster map layer management
 
 TODO: Integrate into the ephemeral process chain approach
 """
+
 from flask_restful_swagger_2 import swagger
 from flask import jsonify, make_response
 import pickle
@@ -65,7 +66,7 @@ class STRDSRasterManagement(ResourceBase):
     @swagger.doc(check_endpoint("get", strds_raster_management.get_doc))
     def get(self, project_name, mapset_name, strds_name):
         """
-        Get a list of all raster map layers that are registered in a STRDS
+        Get a list of all raster map layers that are registered in a STRDS.
         """
         rdc = self.preprocess(
             has_json=False,
@@ -94,8 +95,8 @@ class STRDSRasterManagement(ResourceBase):
     @endpoint_decorator()
     @swagger.doc(check_endpoint("put", strds_raster_management.put_doc))
     def put(self, project_name, mapset_name, strds_name):
-        """Register raster map layers in a STRDS located in a specific
-        project/mapset.
+        """
+        Register raster map layers in a STRDS in a specific project/mapset.
         """
         rdc = self.preprocess(
             has_json=True,
@@ -117,8 +118,7 @@ class STRDSRasterManagement(ResourceBase):
     @swagger.doc(check_endpoint("delete", strds_raster_management.delete_doc))
     def delete(self, project_name, mapset_name, strds_name):
         """
-        Unregister raster map layers from a STRDS located in a specific
-        project/mapset.
+        Unregister raster map layers from a STRDS in a specific project/mapset.
         """
         rdc = self.preprocess(
             has_json=True,

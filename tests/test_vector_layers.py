@@ -24,6 +24,7 @@
 """
 Tests: test list vector layers
 """
+
 import unittest
 from flask.json import loads as json_load
 

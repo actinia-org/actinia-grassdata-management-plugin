@@ -24,6 +24,7 @@
 """
 Tests: Raster layer test case
 """
+
 from pprint import pprint
 from flask.json import loads as json_load
 import unittest

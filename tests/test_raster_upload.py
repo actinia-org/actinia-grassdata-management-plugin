@@ -24,6 +24,7 @@
 """
 Tests: Upload raster via endpoint test case
 """
+
 import os
 import unittest
 import requests
@@ -56,20 +57,39 @@ class UploadRasterLayerTestCase(ActiniaResourceTestCaseBase):
     local_raster = f"/tmp/{raster}.tif"
 
     ref_info = {
-        "cells": "225000",
-        "cols": "500",
-        "east": "645000",
-        "ewres": "30",
         "maptype": "raster",
         "max": "156.3865",
         "min": "55.1736",
         "ncats": "0",
-        "north": "228500",
-        "nsres": "30",
-        "rows": "450",
-        "south": "215000",
-        "west": "630000",
     }
+    if ActiniaResourceTestCaseBase.grass_version < [8, 4]:
+        ref_info.update(
+            {
+                "cells": "225000",
+                "cols": "500",
+                "east": "645000",
+                "ewres": "30",
+                "north": "228500",
+                "nsres": "30",
+                "rows": "450",
+                "south": "215000",
+                "west": "630000",
+            }
+        )
+    else:
+        ref_info.update(
+            {
+                "cells": "226904",
+                "cols": "502",
+                "east": "645000.22656772",
+                "ewres": "29.8804720349003",
+                "north": "228499.21666749",
+                "nsres": "29.8672506598451",
+                "rows": "452",
+                "south": "214999.21936924",
+                "west": "630000.2296062",
+            }
+        )
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -79,8 +99,7 @@ class UploadRasterLayerTestCase(ActiniaResourceTestCaseBase):
         resp_download = requests.get(cls.raster_url)
         if resp_download.status_code == 200:
             with open(cls.local_raster, "wb") as out:
-                for bits in resp_download.iter_content():
-                    out.write(bits)
+                out.writelines(resp_download.iter_content())
 
     @classmethod
     def tearDownClass(cls) -> None:
@@ -104,13 +123,14 @@ class UploadRasterLayerTestCase(ActiniaResourceTestCaseBase):
             f"{URL_PREFIX}/{self.project_url_part}/{self.project}/mapsets/"
             f"{self.tmp_mapset}/raster_layers/{self.raster}"
         )
-        multipart_form_data = {"file": open(self.local_raster, "rb")}
-        rv = self.server.post(
-            url,
-            content_type="multipart/form-data",
-            headers=self.user_auth_header,
-            data=multipart_form_data,
-        )
+        with open(self.local_raster, "rb") as f:
+            multipart_form_data = {"file": f}
+            rv = self.server.post(
+                url,
+                content_type="multipart/form-data",
+                headers=self.user_auth_header,
+                data=multipart_form_data,
+            )
 
         self.waitAsyncStatusAssertHTTP(
             rv,
@@ -133,13 +153,14 @@ class UploadRasterLayerTestCase(ActiniaResourceTestCaseBase):
             f"{URL_PREFIX}/{self.project_url_part}/{self.project}/mapsets/"
             f"{self.mapset}/raster_layers/{self.raster}"
         )
-        multipart_form_data = {"file": open(self.local_raster, "rb")}
-        rv = self.server.post(
-            url,
-            content_type="multipart/form-data",
-            headers=self.user_auth_header,
-            data=multipart_form_data,
-        )
+        with open(self.local_raster, "rb") as f:
+            multipart_form_data = {"file": f}
+            rv = self.server.post(
+                url,
+                content_type="multipart/form-data",
+                headers=self.user_auth_header,
+                data=multipart_form_data,
+            )
         self.waitAsyncStatusAssertHTTP(
             rv,
             headers=self.user_auth_header,

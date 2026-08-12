@@ -26,6 +26,7 @@ STRDS map layer management
 
 TODO: Integrate into the ephemeral process chain approach
 """
+
 import pickle
 from flask import jsonify, make_response
 from flask_restful import reqparse
@@ -116,8 +117,7 @@ class STRDSManagementResource(ResourceBase):
     @swagger.doc(check_endpoint("get", strds_management.get_doc))
     def get(self, project_name, mapset_name, strds_name):
         """
-        Get information about a STRDS that is located in a specific
-        project/mapset.
+        Get information about a STRDS in a specific project/mapset.
         """
         rdc = self.preprocess(
             has_json=False,

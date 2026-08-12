@@ -24,6 +24,7 @@
 """
 Vector layer resources
 """
+
 import os
 from shutil import rmtree
 

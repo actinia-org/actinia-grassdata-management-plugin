@@ -44,7 +44,6 @@ from actinia_grassdata_management_plugin.processing.common.raster_legend import 
     start_job,
 )
 
-
 __license__ = "GPLv3"
 __author__ = "Sören Gebbert, Anika Weinmann"
 __copyright__ = (

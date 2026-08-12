@@ -24,6 +24,7 @@
 """
 Raster layer resources
 """
+
 from flask import jsonify, make_response, request
 from flask_restful_swagger_2 import swagger
 import os
@@ -114,7 +115,7 @@ class RasterLayerResource(MapLayerRegionResourceBase):
     @endpoint_decorator()
     @swagger.doc(check_endpoint("post", raster_layer.post_doc))
     def post(self, project_name, mapset_name, raster_name):
-        """Create a new raster layer by uploading a GeoTIFF"""
+        """Create a new raster layer by uploading a GeoTIFF."""
 
         allowed_extensions = ["tif", "tiff"]
 
