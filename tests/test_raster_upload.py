@@ -57,10 +57,10 @@ class UploadRasterLayerTestCase(ActiniaResourceTestCaseBase):
     local_raster = f"/tmp/{raster}.tif"
 
     ref_info = {
-    "maptype": "raster",
-    "max": "156.3865",
-    "min": "55.1736",
-    "ncats": "0",
+        "maptype": "raster",
+        "max": "156.3865",
+        "min": "55.1736",
+        "ncats": "0",
     }
     if ActiniaResourceTestCaseBase.grass_version < [8, 4]:
         ref_info.update(
