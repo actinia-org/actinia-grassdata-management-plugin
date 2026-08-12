@@ -57,20 +57,39 @@ class UploadRasterLayerTestCase(ActiniaResourceTestCaseBase):
     local_raster = f"/tmp/{raster}.tif"
 
     ref_info = {
-        "cells": "226904",
-        "cols": "502",
-        "east": "645000.22656772",
-        "ewres": "29.8804720349003",
-        "maptype": "raster",
-        "max": "156.3865",
-        "min": "55.1736",
-        "ncats": "0",
-        "north": "228499.21666749",
-        "nsres": "29.8672506598451",
-        "rows": "452",
-        "south": "214999.21936924",
-        "west": "630000.2296062",
+    "maptype": "raster",
+    "max": "156.3865",
+    "min": "55.1736",
+    "ncats": "0",
     }
+    if ActiniaResourceTestCaseBase.grass_version < [8, 4]:
+        ref_info.update(
+            {
+                "cells": "225000",
+                "cols": "500",
+                "east": "645000",
+                "ewres": "30",
+                "north": "228500",
+                "nsres": "30",
+                "rows": "450",
+                "south": "215000",
+                "west": "630000",
+            }
+        )
+    else:
+        ref_info.update(
+            {
+                "cells": "226904",
+                "cols": "502",
+                "east": "645000.22656772",
+                "ewres": "29.8804720349003",
+                "north": "228499.21666749",
+                "nsres": "29.8672506598451",
+                "rows": "452",
+                "south": "214999.21936924",
+                "west": "630000.2296062",
+            }
+        )
 
     @classmethod
     def setUpClass(cls) -> None:
