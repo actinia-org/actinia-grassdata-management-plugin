@@ -24,6 +24,7 @@
 """
 Vector layer resources
 """
+
 from flask import jsonify, make_response, request
 from flask_restful_swagger_2 import swagger
 import os

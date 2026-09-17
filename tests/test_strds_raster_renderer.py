@@ -24,6 +24,7 @@
 """
 Tests: STRDS render test case
 """
+
 import unittest
 from flask.json import dumps as json_dumps
 

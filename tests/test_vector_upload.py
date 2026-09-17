@@ -24,6 +24,7 @@
 """
 Tests: Upload vector via endpoint test case
 """
+
 import os
 import unittest
 
