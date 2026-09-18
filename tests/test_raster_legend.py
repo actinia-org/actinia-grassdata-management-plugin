@@ -24,6 +24,7 @@
 """
 Tests: Raster legend test case
 """
+
 import unittest
 from pprint import pprint
 from flask.json import loads as json_load
