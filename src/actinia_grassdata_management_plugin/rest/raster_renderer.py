@@ -25,6 +25,7 @@
 Raster map renderer
 
 """
+
 from flask_restful_swagger_2 import swagger
 import os
 from flask import jsonify, make_response, Response

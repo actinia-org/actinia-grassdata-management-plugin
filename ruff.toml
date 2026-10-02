@@ -77,3 +77,4 @@ lint.ignore = [
     "S108",
     "S113",
 ]
+"src/actinia_grassdata_management_plugin/__init__.py" = [ "RUF067" ]

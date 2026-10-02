@@ -24,6 +24,7 @@
 """
 Raster map renderer
 """
+
 from tempfile import NamedTemporaryFile
 from actinia_processing_lib.ephemeral_processing import EphemeralProcessing
 
