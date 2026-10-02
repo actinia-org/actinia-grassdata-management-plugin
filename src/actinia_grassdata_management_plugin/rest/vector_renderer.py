@@ -60,7 +60,7 @@ class SyncEphemeralVectorRendererResource(RendererBaseResource):
     @endpoint_decorator()
     @swagger.doc(check_endpoint("get", vector_renderer.get_doc))
     def get(self, project_name, mapset_name, vector_name):
-        """Render a single vector map layer"""
+        """Render a single vector map layer."""
         parser = self.create_parser()
         args = parser.parse_args()
         options = self.create_parser_options(args)
