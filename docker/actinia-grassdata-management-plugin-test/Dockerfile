@@ -42,19 +42,15 @@ COPY . /src/actinia-grassdata-management-plugin/
 WORKDIR /src/actinia-grassdata-management-plugin/
 RUN pip3 install --no-cache-dir -e .
 
-# TODO remove when merged to main branch in actinia-core and actinia-api
+# For development purposes, the following lines can be uncommented to install
+# actinia-core from source. This is useful if you want to test changes in those
+# packages without having to wait for a new release.
 # This needs to be below actinia-grassdata-management-plugin installation
 # as both packages are requirements and would be overwritten again.
-RUN pip3 uninstall actinia_core -y
-RUN git clone https://github.com/actinia-org/actinia-core.git /src/actinia-core
-WORKDIR /src/actinia-core
-RUN git checkout develop
-RUN pip install --no-cache-dir .
-RUN pip3 uninstall actinia_api -y
-RUN git clone https://github.com/actinia-org/actinia-api.git /src/actinia-api
-WORKDIR /src/actinia-api
-RUN git checkout develop
-RUN pip install --no-cache-dir .
+# RUN pip3 uninstall actinia_core -y
+# RUN git clone https://github.com/actinia-org/actinia-core.git /src/actinia-core
+# WORKDIR /src/actinia-core
+# RUN pip install --no-cache-dir .
 
 WORKDIR /src/actinia-grassdata-management-plugin/
 RUN chmod a+x tests_with_kvdb.sh && make install
